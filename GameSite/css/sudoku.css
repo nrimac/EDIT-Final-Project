@@ -21,15 +21,13 @@ hr {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-
-  background-color: yellow;
 }
 
-.tile,
-.number {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #a1a1a1;
+.tile {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #d1d1d1;
+
   font-size: 20px;
   font-weight: bold;
   display: flex;
@@ -41,12 +39,36 @@ hr {
   width: 450px;
   height: 50px;
 
-  background-color: yellow;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
 .number {
-  border-color: black;
+  width: 46px;
+  height: 46px;
+  border: 1px solid black;
+  margin: 2px;
+
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-number {
+  background-color: #c9c9c9;
+}
+
+.tile-start {
+  background-color: whitesmoke;
+}
+
+.horizontal-border {
+  border-bottom: 2px solid black;
+}
+
+.vertical-border {
+  border-right: 2px solid black;
 }

@@ -26,4 +26,59 @@ const solution = [
   [6, 7, 5, 8, 3, 2, 9, 4, 1],
   [8, 1, 2, 9, 4, 5, 7, 6, 3],
 ];
-  
+
+function startGame() {
+  for (let i = 1; i <= 9; i++) {
+    const number = document.createElement("div");
+    number.id = i;
+    number.innerText = i;
+    number.classList.add("number");
+    number.addEventListener("click", selectNum);
+
+    document.getElementById("digits").appendChild(number);
+  }
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      const tile = document.createElement("div");
+      tile.id = i + "-" + j;
+      tile.classList.add("tile");
+      tile.addEventListener("click", selectTile);
+      if (board[i][j] != 0) {
+        tile.innerText = board[i][j];
+        tile.classList.add("tile-start");
+      }
+      
+      if (i === 2 || i === 5) {
+        tile.classList.add("horizontal-border");
+      }
+      if (j === 2 || j === 5) {
+        tile.classList.add("vertical-border");
+      }
+
+      document.getElementById("board").appendChild(tile);
+    }
+  }
+}
+
+function selectNum() {
+  if (selectedNum != null) {
+    selectedNum.classList.remove("selected-number");
+  }
+
+  selectedNum = this;
+  selectedNum.classList.add("selected-number");
+}
+
+function selectTile() {
+  if (selectedNum) {
+    if (this.innerText != "") {
+      return;
+    }
+    this.innerText = selectedNum.id;
+  }
+}
+
+window.onload = function () {
+  startGame();
+};
