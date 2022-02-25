@@ -48,7 +48,7 @@ function startGame() {
         tile.innerText = board[i][j];
         tile.classList.add("tile-start");
       }
-      
+
       if (i === 2 || i === 5) {
         tile.classList.add("horizontal-border");
       }
@@ -68,15 +68,32 @@ function selectNum() {
 
   selectedNum = this;
   selectedNum.classList.add("selected-number");
+
+  highlightTiles(parseInt(selectedNum.innerText));
 }
 
 function selectTile() {
+  selectedTile = this;
+  let tileCoords = selectedTile.id.split("-").map((el) => (el = parseInt(el)));
+
   if (selectedNum) {
-    if (this.innerText != "") {
+    if (board[tileCoords[0]][tileCoords[1]] != 0) {
       return;
     }
-    this.innerText = selectedNum.id;
+    selectedTile.innerText = selectedNum.id;
   }
+}
+
+function highlightTiles(numberToHighlight) {
+  const allTiles = document.querySelectorAll(".tile");
+
+  allTiles.forEach((tile) => {
+    if (parseInt(tile.innerText) == numberToHighlight) {
+      tile.classList.add("highlighted-tile");
+    } else {
+      tile.classList.remove("highlighted-tile");
+    }
+  });
 }
 
 window.onload = function () {

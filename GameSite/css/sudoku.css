@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Source+Sans+Pro:wght@200&display=swap");
 
+* {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+}
+
 body {
   font-family: "Roboto Slab", serif;
   text-align: center;
@@ -71,4 +79,8 @@ hr {
 
 .vertical-border {
   border-right: 2px solid black;
+}
+
+.highlighted-tile {
+  background-color: #63fffc;
 }
