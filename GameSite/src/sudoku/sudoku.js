@@ -1,9 +1,7 @@
 let selectedNum = null;
 let selectedTile = null;
 
-let errors = 0;
-
-let board = [
+const board = [
   [0, 0, 7, 4, 9, 1, 6, 0, 5],
   [2, 0, 0, 0, 6, 0, 3, 0, 9],
   [0, 0, 0, 0, 0, 7, 0, 1, 0],
@@ -80,8 +78,14 @@ function selectTile() {
     if (board[tileCoords[0]][tileCoords[1]] != 0) {
       return;
     }
-    selectedTile.innerText = selectedNum.id;
+    if (selectedTile.innerText === selectedNum.id) {
+      selectedTile.innerText = "";
+    } else {
+      selectedTile.innerText = selectedNum.id;
+    }
   }
+
+  highlightTiles(parseInt(selectedNum.innerText));
 }
 
 function highlightTiles(numberToHighlight) {

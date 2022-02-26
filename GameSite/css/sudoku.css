@@ -17,14 +17,12 @@ hr {
   width: 30%;
 }
 
-/* treba ubacit timer umjesto errora */
-#errors {
-  color: #cc5e1e;
+.timer {
 }
 
 #board {
-  width: 450px;
-  height: 450px;
+  width: 504px;
+  height: 504px;
 
   margin: 0 auto;
   display: flex;
@@ -32,8 +30,8 @@ hr {
 }
 
 .tile {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border: 1px solid #d1d1d1;
 
   font-size: 20px;
@@ -44,8 +42,8 @@ hr {
 }
 
 #digits {
-  width: 450px;
-  height: 50px;
+  width: 504px;
+  height: 56px;
 
   margin: 0 auto;
   display: flex;
@@ -53,8 +51,8 @@ hr {
 }
 
 .number {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   border: 1px solid black;
   margin: 2px;
 
@@ -82,5 +80,5 @@ hr {
 }
 
 .highlighted-tile {
-  background-color: #63fffc;
+  background-color: #77c3b0;
 }
