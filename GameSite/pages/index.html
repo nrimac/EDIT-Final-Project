@@ -25,26 +25,41 @@
           width="100px"
         />
         <h1>Please enter:</h1>
+        <h5 id="error"></h5>
         <div class="form-floating">
           <input
             type="text"
             class="form-control"
-            id="floatingUsername"
+            id="username"
             placeholder="Username"
+            required
           />
-          <label for="floatingUsername">Username</label>
+          <label for="username">Username</label>
         </div>
         <div class="form-floating">
           <input
             type="password"
             class="form-control"
-            id="floatingPassword"
+            id="password"
             placeholder="Password"
+            required
           />
-          <label for="floatingPassword">Password</label>
+          <label for="password">Password</label>
         </div>
-        <button class="w-100 btn btn-lg btn-outline-primary" type="submit">
+        <button
+          id="btn-login"
+          class="w-100 btn btn-lg btn-outline-primary"
+          type="submit"
+        >
           Log in
+        </button>
+
+        <button
+          id="btn-register"
+          class="w-100 btn btn-lg btn-outline-primary"
+          type="button"
+        >
+          Register
         </button>
       </form>
     </main>
