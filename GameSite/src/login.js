@@ -22,29 +22,6 @@ btnLogin.addEventListener("click", login);
 
 btnRegister.addEventListener("click", register);
 
-form.addEventListener("submit", (e) => {
-  let messages = [];
-  if (name.value === "" || name.value === null) {
-    messages.push("Name is requred");
-  }
-
-  if (password.value.length < 6) {
-    messages.push("Password must be longer than 5 characters!");
-  }
-
-  if (password.value.length >= 20) {
-    messages.push("Password mustn't be longer than 20 characters!");
-  }
-
-  if (messages.length > 0) {
-    errorElement.innerText = messages.join(", ");
-  } else {
-    errorElement.innerText = "";
-  }
-
-  e.preventDefault();
-});
-
 async function login() {
   let user = null;
 
