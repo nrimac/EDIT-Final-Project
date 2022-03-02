@@ -36,9 +36,10 @@ async function login() {
     );
 
   if (user != null && user.password === password.value) {
-    console.log(user);
+    localStorage.setItem("user", JSON.stringify(user));
+    window.location.href = "../pages/main.html";
   } else {
-    console.log("nah");
+    alert("Wrong password or username!");
   }
 }
 
