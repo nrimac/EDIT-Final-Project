@@ -1,3 +1,8 @@
-#first-row{
-  margin-top: 5%;
+.custom-margin {
+  margin-left: 5%;
+}
+
+.table-container {
+  padding: 1% 1% 1% 1%;
+  background-color: rgb(201, 201, 201);
 }
