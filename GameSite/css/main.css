@@ -1,8 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 .custom-margin {
   margin-left: 5%;
 }
 
 .table-container {
   padding: 1% 1% 1% 1%;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(233, 233, 233);
+  border-radius: 5px;
+}
+
+body {
+  background-image: linear-gradient(rgb(119, 195, 176), rgb(8, 255, 181));
+  background-attachment: fixed;
 }
