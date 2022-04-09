@@ -36,7 +36,8 @@ async function getRandomSudoku() {
       })
     );
 
-  console.log(sudokuPuzzles);
-}
+  const sudoku =
+    sudokuPuzzles[Math.floor(Math.random() * sudokuPuzzles.length)];
 
-getRandomSudoku();
+  return sudoku;
+}

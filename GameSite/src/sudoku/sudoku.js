@@ -1,29 +1,8 @@
 let selectedNum = null;
 let selectedTile = null;
 
-let board = [
-  [1, 3, 2, 6, 8, 0, 7, 0, 0],
-  [5, 0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 6, 0, 2, 0, 0, 3, 0, 5],
-  [8, 7, 1, 0, 2, 0, 0, 5, 0],
-  [0, 0, 9, 0, 5, 1, 2, 6, 7],
-  [2, 0, 0, 0, 0, 3, 9, 0, 0],
-  [6, 8, 0, 0, 0, 7, 0, 0, 0],
-  [0, 1, 5, 0, 4, 2, 8, 0, 0],
-  [4, 0, 0, 0, 6, 0, 1, 3, 0],
-];
-
-let solution = [
-  [1, 3, 2, 6, 8, 5, 7, 9, 4],
-  [5, 9, 8, 7, 3, 4, 6, 2, 1],
-  [7, 6, 4, 2, 1, 9, 3, 8, 5],
-  [8, 7, 1, 9, 2, 6, 4, 5, 3],
-  [3, 4, 9, 8, 5, 1, 2, 6, 7],
-  [2, 5, 6, 4, 7, 3, 9, 1, 8],
-  [6, 8, 3, 1, 9, 7, 5, 4, 2],
-  [9, 1, 5, 3, 4, 2, 8, 7, 6],
-  [4, 2, 7, 5, 6, 8, 1, 3, 9],
-];
+let board = [];
+let solution = [];
 
 function startGame() {
   for (let i = 1; i <= 9; i++) {
@@ -100,7 +79,10 @@ function highlightTiles(numberToHighlight) {
   });
 }
 
-window.onload = function () {
+window.onload = async function () {
+  const sudoku = await getRandomSudoku();
+  board = JSON.parse(sudoku.puzzle);
+  solution = JSON.parse(sudoku.solution);
   startGame();
   setInterval(updateCountdown, 1000);
 };
