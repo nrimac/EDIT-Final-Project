@@ -10,5 +10,5 @@ function updateCountdown() {
 
   timer.innerHTML = `${minutes}:${seconds}`;
 
-  time--;
+  time <= 0 ? null : time--;
 }

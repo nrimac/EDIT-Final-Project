@@ -2,6 +2,7 @@ let selectedNum = null;
 let selectedTile = null;
 
 let board = [];
+let playerBoard = [];
 let solution = [];
 
 function startGame() {
@@ -59,11 +60,14 @@ function selectTile() {
     }
     if (selectedTile.innerText === selectedNum.id) {
       selectedTile.innerText = "";
+      playerBoard[tileCoords[0]][tileCoords[1]] = 0;
     } else {
       selectedTile.innerText = selectedNum.id;
+      playerBoard[tileCoords[0]][tileCoords[1]] = parseInt(selectedNum.id);
     }
   }
 
+  checkGameState();
   highlightTiles(parseInt(selectedNum.innerText));
 }
 
@@ -79,10 +83,25 @@ function highlightTiles(numberToHighlight) {
   });
 }
 
+function checkGameState() {
+  let gameComplete = true;
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      if (playerBoard[i][j] !== solution[i][j]) gameComplete = false;
+    }
+  }
+
+  if (gameComplete === true) {
+    alert("You won!");
+  }
+}
+
 window.onload = async function () {
   const sudoku = await getRandomSudoku();
   board = JSON.parse(sudoku.puzzle);
+  playerBoard = JSON.parse(sudoku.puzzle);
   solution = JSON.parse(sudoku.solution);
+
   startGame();
   setInterval(updateCountdown, 1000);
 };
