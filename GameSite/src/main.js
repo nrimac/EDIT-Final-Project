@@ -1,6 +1,9 @@
 const user = JSON.parse(localStorage.getItem("user"));
 // localStorage.clear();
 
+const welcome = document.getElementById("user");
+welcome.innerText = `Welcome ${user.username}!`;
+
 const firebaseConfig = {
   apiKey: "AIzaSyCtBDNUyK65-t5NCRWILtfCI4FLBMKZ4U4",
   authDomain: "gamesite-1e06c.firebaseapp.com",

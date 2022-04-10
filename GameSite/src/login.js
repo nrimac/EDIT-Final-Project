@@ -73,7 +73,7 @@ async function register() {
   };
 
   await database.collection("Users").add(user);
-  
+
   localStorage.setItem("user", JSON.stringify(user));
   window.location.href = "../pages/main.html";
 }

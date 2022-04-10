@@ -23,6 +23,7 @@ const app = firebase.initializeApp(firebaseConfig);
 
 const database = app.firestore();
 
+//uzima jednu od sudokua iz firebasea i vraca objekt sa igrom, rjesenjem i tezinom
 async function getRandomSudoku() {
   let sudokuPuzzles = [];
 
